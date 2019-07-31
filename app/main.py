@@ -7,7 +7,7 @@ import json
 class Images(object):
     
     def __init__(self):
-        self.URI = 'http://201.16.246.176:5000/'
+        self.URI = 'http://imoveis.powempresas.com/'
         #self.URI = 'http://localhost:5000/'
         #self.cwd = '/home/programacao/Python/repositorio/'
         self.cwd = '/home/pow/www/powsites/'
@@ -47,7 +47,7 @@ class Images(object):
                 lista_retorno = []
                 for arquivo in lista_arquivos:
                     if os.path.isfile(pasta + arquivo):
-                        if 'F' is arquivo[0]:
+                        if '1150F' in arquivo:
                             lista_retorno.append(arquivo)
                 return lista_retorno
             else:
@@ -69,7 +69,7 @@ class Images(object):
     
     def verificaImovelexiste(self,arquivo):
         partes = arquivo.split('_')
-        pega_imovel = self.getImovelID(partes[1])
+        pega_imovel = self.getImovelID(partes[2])
         return pega_imovel
     
     def deletarArquivos(self,pasta,arquivo):
